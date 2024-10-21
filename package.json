@@ -1,0 +1,38 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "Boiler Plate Code for Node Server",
+  "main": "./src/index.ts",
+  "repository": "",
+  "author": "Sudhir Singh",
+  "license": "MIT",
+  "scripts": {
+    "cleanup:build": "rimraf ./dist",
+    "cleanup:node_modules": "rimraf ./node_modules",
+    "cleanup": "yarn cleanup:build && yarn cleanup:node_modules",
+    "lint": "yarn eslint src/**/*.ts",
+    "linting": "yarn linting:eslint",
+    "linting:eslint": "eslint --fix",
+    "lint:pipeline": "eslint --format gitlab ",
+    "prebuild": "yarn cleanup:build",
+    "build": "yarn prebuild && yarn run tsc",
+    "start": "node dist/index",
+    "dev": "ts-node-dev --project ./tsconfig.json src/index.ts"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.6",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.10.0",
+    "eslint": "^9.13.0",
+    "rimraf": "^6.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  }
+}

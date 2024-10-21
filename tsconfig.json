@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    /// ----- Basic Options
+
+    "target": "ESNext",
+    "module": "nodenext",
+    // "lib": "" // Specifies a list of built-in TypeScript declaration files to include in the compilation.
+    "allowJs": false,
+    "checkJs": false,
+    // "declaration": true, // generate .d.ts declaration files
+    "sourceMap": true, // keeping TS files for debugging along side emitted JS files
+    "outDir": "./dist", // "./dist" or "./build" file
+    "rootDir": "./src",
+    // "incremental": true, // Enables incremental compilation by storing information in a .tsbuildinfo file., Improves build performance by reusing information from previous compilations.
+    // "tsBuildInfoFile": "./buildInfo", // It should be used together with incremental
+    "removeComments": true,
+    "noEmit": false, // useful for CICD to not generate js files
+    "noEmitOnError": true,
+
+    /// ------ Module Resolution Options
+
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+      // and other required path aliases
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // "moduleSuffixes": , // List of file name suffixes to search when resolving a module, Supports alternate module resolution strategies, useful in monorepo setups.
+
+    /// ------- Strict Type-Checking Options
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true, // Need to revisit
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    // "noUnusedParameters": true, // Need to revisit
+    "noImplicitReturns": true,
+    // "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "useUnknownInCatchVariables": true
+  }
+}
